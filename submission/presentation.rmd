@@ -188,3 +188,10 @@ $$\text{RMSE}=\frac{1}{n}\sum_{i=1}^n\big(\tau(x_i) - \hat{\tau}(x_i)\big)^2$$
 - Use differences of observed outcomes within pairs as "observed benefit"
 - Fit smooth calibration curve
 - Calculate the <footnote content="Austin, PC, Steyerberg, EW. The Integrated Calibration Index (ICI) and related metrics for quantifying the calibration of logistic regression models. <em>Statistics in Medicine<em>. 2019; 38: 4051– 4065.">integrated calibration index</footnote>
+
+
+## Simulations
+
+- Total of 66 scenarios
+- Replicate each scenario 1000 times
+- For each scenario, evaluations are made on a super-population of 500,000

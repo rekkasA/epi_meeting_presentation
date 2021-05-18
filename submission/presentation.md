@@ -172,6 +172,11 @@ We consider three different approaches to smoothing:
 - Restricted cubic splines
 - Local likelihood
 
+
+## Demonstration
+
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/smooth.png" width="85%" />
+
 ## Evaluation
 
 **Root mean squared error**

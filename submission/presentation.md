@@ -113,6 +113,24 @@ $$P(y\given x, t_x=1) = g(lp_1)$$
 
 where $$lp_1 = \gamma_2(lp_0-c)^2+\gamma_1(lp_0-c)+\gamma_0$$
 
+
+
+## Setting
+<div class="figure">
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_linear_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" /><img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_quadratic_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" />
+<p class="caption">Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)</p>
+</div>
+
+
+
+## Setting
+<div class="figure">
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_linear_absolute_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" /><img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_quadratic_absolute_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" />
+<p class="caption">Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)</p>
+</div>
+
+
+
 ## Setting
 **Base-case scenario**
 
@@ -121,23 +139,13 @@ where $$lp_1 = \gamma_2(lp_0-c)^2+\gamma_1(lp_0-c)+\gamma_0$$
 - Outcome incidence, if left untreated: 20%
 - Prediction model "true" AUC: 0.75
 
-**Deviations(A)**
+**Deviations**
 
 * Sample size: 1064, 17000
 * Overall treatment effect: 0.5, 1
 * Prediction performance: 0.65, 0.85
 
-## Setting
-<div class="figure">
-<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_linear_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" /><img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_quadratic_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" />
-<p class="caption">Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)</p>
-</div>
 
-## Setting
-<div class="figure">
-<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_linear_absolute_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" /><img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_quadratic_absolute_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" />
-<p class="caption">Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)</p>
-</div>
 
 ## Setting
 Finally, we consider 3 additional scenarios of interaction of individual covariates with treatment. These scenarios include a 4 weak interactions ($\text{OR}_{t_x=1} / \text{OR}_{t_x=0}=0.82$), 4 strong interactions ($\text{OR}_{t_x=1} / \text{OR}_{t_x=0}=0.61$), and 2 weak and 2 strong interactions.

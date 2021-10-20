@@ -11,13 +11,10 @@ output:
   ioslides_presentation:
     smaller: TRUE
     keep_md: TRUE
-    transition: default
+    transition: slower
     widescreen: TRUE
   beamer_presentation: default
 ---
-
-
-
 
 <style type="text/css">
 slides > slide:not(.nobackground):after {
@@ -46,13 +43,17 @@ div.footnotes {
       var fnNum = (index+1).toString().sup();
       $(this).html(text + fnNum);
 
-      var footnote   = fnNum + ' ' + $(this).attr('content') + '<br/>';
+      var footnote   = fnNum  + $(this).attr('content') + '<br/>';
       var oldContent = $(this).parents('slide').children('div.footnotes').html();
       var newContent = oldContent + footnote;
       $(this).parents('slide').children('div.footnotes').html(newContent);
     });
   });
 </script>
+
+
+
+
 
 
 ## Subgroup analyses
@@ -117,16 +118,16 @@ where $$lp_1 = \gamma_2(lp_0-c)^2+\gamma_1(lp_0-c)+\gamma_0$$
 
 ## Setting
 <div class="figure">
-<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_linear_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" /><img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_quadratic_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" />
-<p class="caption">Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)</p>
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_linear_08.png" alt="Figure 1: Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" /><img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_quadratic_08.png" alt="Figure 1: Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" />
+<p class="caption">Figure 1: Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)</p>
 </div>
 
 
 
 ## Setting
 <div class="figure">
-<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_linear_absolute_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" /><img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_quadratic_absolute_08.png" alt="Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" />
-<p class="caption">Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)</p>
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_linear_absolute_08.png" alt="Figure 2: Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" /><img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/deviate_quadratic_absolute_08.png" alt="Figure 2: Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)" width="50%" />
+<p class="caption">Figure 2: Linear and quadratic deviations from the base-case scenario of constant relative effect (OR=0.8)</p>
 </div>
 
 
@@ -148,7 +149,11 @@ where $$lp_1 = \gamma_2(lp_0-c)^2+\gamma_1(lp_0-c)+\gamma_0$$
 
 
 ## Setting
-Finally, we consider 3 additional scenarios of interaction of individual covariates with treatment. These scenarios include a 4 weak interactions ($\text{OR}_{t_x=1} / \text{OR}_{t_x=0}=0.82$), 4 strong interactions ($\text{OR}_{t_x=1} / \text{OR}_{t_x=0}=0.61$), and 2 weak and 2 strong interactions.
+Finally, we consider 3 additional scenarios of interaction of individual covariates with treatment. These scenarios include:
+
+- 4 weak interactions: $\text{OR}_{t_x=1} / \text{OR}_{t_x=0}=0.82$
+- 4 strong interactions: $\text{OR}_{t_x=1} / \text{OR}_{t_x=0}=0.61$
+- 2 weak and 2 strong interactions
 
 ## Methods
 **Constant treatment effect**
@@ -166,16 +171,7 @@ $$\hat{f}_{\text{benefit}}(lp\given x, \hat{\beta}) = g(lp) - g\big(\delta_0+(1+
 ## Methods
 **Non-linear interaction**
 $$f_{\text{benefit}}(lp\given x,\hat{\beta}) = \hat{f}_{\text{smooth}}(lp\given x, \hat{\beta}, t_x=0) - \hat{f}_{\text{smooth}}(lp\given x, \hat{\beta}, t_x=1)$$
-We consider three different approaches to smoothing:
-
-- Loess
-- Restricted cubic splines
-- Local likelihood
-
-
-## Demonstration
-
-<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/figures/smooth.png" width="85%" />
+We use restricted cubic spline smoothing wit 3, 4 and 5 knots.
 
 ## Evaluation
 
@@ -206,3 +202,86 @@ $$\text{RMSE}=\frac{1}{n}\sum_{i=1}^n\big(\tau(x_i) - \hat{\tau}(x_i)\big)^2$$
 - Total of 66 scenarios
 - Replicate each scenario 1000 times
 - For each scenario, evaluations are made on a super-population of 500,000
+
+
+## Results: RMSE
+
+<div class="figure" style="text-align: center">
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/submission/figures/rmse_base.jpg" alt="Figure 3: RMSE of the considered methods across 500 replications calculated in a simulated superpopulation of size 500,000." width="60%" />
+<p class="caption">Figure 3: RMSE of the considered methods across 500 replications calculated in a simulated superpopulation of size 500,000.</p>
+</div>
+
+## Results: RMSE
+
+<div class="figure" style="text-align: center">
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/submission/figures/rmse_sample_size.jpg" alt="Figure 4: RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000. Sample size 17,000 rather than 4250 in Figure 3." width="60%" />
+<p class="caption">Figure 4: RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000. Sample size 17,000 rather than 4250 in Figure 3.</p>
+</div>
+
+## Results: RMSE
+
+<div class="figure" style="text-align: center">
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/submission/figures/rmse_auc.jpg" alt="Figure 5: RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000. AUC is 0.85 instead of 0.75 in Figure 3." width="60%" />
+<p class="caption">Figure 5: RMSE of the considered methods across 500 replications calculated in a simulated sample of size 500,000. AUC is 0.85 instead of 0.75 in Figure 3.</p>
+</div>
+
+## Results: Discrimination for benefit
+
+<div class="figure" style="text-align: center">
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/submission/figures/discrimination_base.png" alt="Figure 6: Discrimination for benefit of the considered methods across 500 replications of the base case scenario calculated in a simulated superpopulation of size 500,000." width="60%" />
+<p class="caption">Figure 6: Discrimination for benefit of the considered methods across 500 replications of the base case scenario calculated in a simulated superpopulation of size 500,000.</p>
+</div>
+
+## Results: Calibration for benefit
+
+<div class="figure" style="text-align: center">
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/submission/figures/calibration_base.png" alt="Figure 7: Calibration for benefit of the considered methods across 500 replications of the base case scenario calculated in a simulated superpopulation of size 500,000." width="60%" />
+<p class="caption">Figure 7: Calibration for benefit of the considered methods across 500 replications of the base case scenario calculated in a simulated superpopulation of size 500,000.</p>
+</div>
+
+## Results: Case study
+
+Data from GUSTO-I trial
+
+- Patients with acute myocardial infarction were randomized to:
+
+  - tissue plasminogen activator (10,348)
+  - streptokinase (10,348)
+
+- Outcome: 30-day mortality
+
+## Results: Case study
+
+In line with previous analyses (<footnote content="Califf RM, Woodlief LH, Harrell FE, Lee KL, White HD, Guerci A, et al. Selection of thrombolytic therapy for individual patients: Development of a clinical model. <em>American Heart Journal</em> 1997;133:630–9.">Califf et al, 1997</footnote> and <footnote content="Steyerberg EW, Bossuyt PMM, Lee KL. Clinical trials in acute myocardial infarction: Should we adjust for baseline characteristics? <em>American Heart Journal</em> 2000;139:745–51.">Steyerberg et al</footnote>) we fitted a logistic regression model for the prediction of 30-day mortality using:
+
+- age
+- Killip class
+- systolic blood pressure
+- heart rate
+- indicator of previous myocardial infarction (binary)
+- location of myocardial infarction
+
+
+## Results: Case study
+
+<div class="figure" style="text-align: center">
+<img src="/home/arekkas/Documents/Projects/epi_meeting_presentation/submission/figures/gusto.png" alt="Figure 8: Calibration for benefit of the considered methods across 500 replications of the base case scenario calculated in a simulated superpopulation of size 500,000." width="60%" />
+<p class="caption">Figure 8: Calibration for benefit of the considered methods across 500 replications of the base case scenario calculated in a simulated superpopulation of size 500,000.</p>
+</div>
+
+## Conclusions
+
+- Linear interaction models had adequate performance in the majority of the
+scenarios considered
+- Flexible models required larger sample sizes and higher AUC to outperform the
+linear interaction model
+- The adaptive approach tended to select simpler models with smaller sample
+sizes and/or worse prediction performance.
+
+## `Appendix A:` Integrated calibration index
+
+- ***Harrell:***
+$$\text{E}_\text{max}(a, b) = \text{max}_{a \leq \hat{P} \leq b} |\hat{P} - \hat{P}_c |$$
+
+- ***Austin et al:***
+$$\text{ICI} = \int_0^1f(x)\phi(x)dx$$

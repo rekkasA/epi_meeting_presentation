@@ -178,7 +178,11 @@ We use restricted cubic spline smoothing wit 3, 4 and 5 knots.
 ## Methods
 **Adaptive approach**
 
-Adaptive approach usig 
+Adaptive approach using AIC. Candidate models are:
+
+- Constant treatment effect model
+- linear interaction model
+- RCS models (3, 4 and 5 knots)
 
 ## Evaluation
 

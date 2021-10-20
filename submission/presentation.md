@@ -173,6 +173,15 @@ $$\hat{f}_{\text{benefit}}(lp\given x, \hat{\beta}) = g(lp) - g\big(\delta_0+(1+
 $$f_{\text{benefit}}(lp\given x,\hat{\beta}) = \hat{f}_{\text{smooth}}(lp\given x, \hat{\beta}, t_x=0) - \hat{f}_{\text{smooth}}(lp\given x, \hat{\beta}, t_x=1)$$
 We use restricted cubic spline smoothing wit 3, 4 and 5 knots.
 
+## Methods
+**Adaptive approach**
+
+Adaptive approach using AIC. Candidate models are:
+
+- Constant treatment effect model
+- linear interaction model
+- RCS models (3, 4 and 5 knots)
+
 ## Evaluation
 
 **Root mean squared error**
